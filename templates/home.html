@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<main>
+    <section class="layout-hero">
+        <div class="wrapper-hero">
+            <article class="m-hero-left">
+                <h2>Love Pets?</h2>
+                <h3>Everybody needs a home. Everybody needs love and care. Animals who 
+                    have been abandoned are no exception. As a person, how would you feel 
+                    if you were abandoned? You'd be sad I bet! That's just how these animals feel. 
+                    Now, look into your heart and...</h3>
+                <button type="button" class="m-cta-button" onclick="alert('Clicked')">Take them home!</button>
+            </article>
+            <figure class="m-image-right">
+                <img src="resources/images/pet-owner.jpg" alt="">
+            </figure>
+        </div>  
+    </section>
+    <div class="triangle-hero"></div>
+</main>
+{% endblock %}
