@@ -18,14 +18,19 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path
 
-from pages.views import home, about_us, contact_us, quiz
+from pages.views import home, about_us, contact_us, quiz, animals, animal_form, login, quiz_results, keep_contact
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', home, name='home'),
-    path('about-us/', about_us, name='about-us'),
-    path('contact-us/', contact_us, name='contact-us'),
+    path('about/', about_us, name='about'),
+    path('animals/', animals, name='animals'),
+    path('contact/', contact_us, name='contact'),
     path('quiz/', quiz, name='quiz'),
+    path('adoption/', animal_form, name='adoption'),
+    path('login/', login, name='login'),
+    path('quiz_results/', quiz_results, name='quiz_results'),
+    path('keep_contact/', keep_contact, name='keep_contact')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

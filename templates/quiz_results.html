@@ -1,0 +1,275 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "quiz-container">
+    <h1> Quiz </h1>
+    <br>
+    <form method="post" action="">
+    {% csrf_token %}
+    <h4> 1. When is World Adoption Day? </h4>
+    <input type="radio" id="date1" name = "date" value="September 25">
+    {% if date == "September 25" %}
+        <label for="date1" style="color:red">September 25</label>
+    {% else %}
+        <label for="date1">September 25</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "date2" name = "date" value="November 9">
+    <label for="date1" style="color:green">November 9</label>
+    <br>
+    <input type="radio" id = "date3" name = "date" value="August 24">
+    {% if date == "August 24" %}
+        <label for="date1" style="color:red">August 24</label>
+    {% else %}
+        <label for="date1">August 24</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "date4" name = "date" value="March 15">
+    {% if date == "March 15" %}
+        <label for="date1" style="color:red">March 15</label>
+    {% else %}
+        <label for="date1">March 15</label>
+    {% endif %}
+    <br>
+    <br>
+    <h4> 2. How many stray animals exist in the world? </h4>
+    <input type="radio" id = "stray1" name = "stray" value="approx. 200 million">
+    {% if stray == "approx. 200 million"%}
+        <label for="stray1" style="color:red">approx. 200 million</label>
+    {% else %}
+        <label for="stray1">approx. 200 million</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "stray2" name = "stray" value="approx. 900 million">
+    {% if stray == "approx. 900 million"%}
+        <label for="stray2" style="color:red">approx. 900 million</label>
+    {% else %}
+        <label for="stray2">approx. 900 million</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "stray3" name = "stray" value="approx. 600 million">
+    <label for="stray3" style="color:green">approx. 600 million</label>
+    <br>
+    <input type="radio" id = "stray4" name = "stray" value="approx. 300 million">
+    {% if stray == "approx. 300 million"%}
+        <label for="stray1" style="color:red">approx. 300 million</label>
+    {% else %}
+        <label for="stray1">approx. 300 million</label>
+    {% endif %}
+    <br>
+    <br>
+    <h4> 3. Which animal can you adopt from this list? </h4>
+    <input type="radio" id = "animal1" name = "animal" value="Lion">
+    {% if animal == "Lion"%}
+        <label for="animal1" style="color:red">Lion</label>
+    {% else %}
+        <label for="animal1">Lion</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "animal2" name = "animal" value="Chinchilla">
+    <label for="animal2" style="color:green">Chinchilla</label>
+    <br>
+    <input type="radio" id = "animal3" name = "animal" value="Anaconda">
+    {% if animal == "Anaconda"%}
+        <label for="animal3" style="color:red">Anaconda</label>
+    {% else %}
+        <label for="animal3">Anaconda</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "animal4" name = "animal" value="Tasmanian Devil">
+    {% if animal == "Tasmanian Devil"%}
+        <label for="animal4" style="color:red">Tasmanian Devil</label>
+    {% else %}
+        <label for="animal4">Tasmanian Devil</label>
+    {% endif %}
+    <br>
+    <br>
+    <h4> 4. What can you not feed a dog? </h4>
+    <input type="radio" id = "feed1" name = "feed" value="Meat">
+    {% if feed == "Meat"%}
+        <label for="feed1" style="color:red">Meat</label>
+    {% else %}
+        <label for="feed1">Meat</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "feed2" name = "feed" value="Egg">
+    {% if feed == "Egg"%}
+        <label for="feed1" style="color:red">Egg</label>
+    {% else %}
+        <label for="feed1">Egg</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "feed3" name = "feed" value="Bones">
+    {% if feed == "Bones"%}
+        <label for="feed1" style="color:red">Bones</label>
+    {% else %}
+        <label for="feed1">Bones</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "feed4" name = "feed" value="Chocolate">
+    <label for="feed4" style = "color:green">Chocolate</label>
+    <br>
+    <br>
+    <h4> 5. How many animal species exist in the world? </h4>
+    <input type="radio" id = "spec1" name = "spec" value="3.2 million">
+    {% if spec == "3.2 million"%}
+        <label for="spec1" style="color:red">3.2 million</label>
+    {% else %}
+        <label for="spec1">3.2 million</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "spec2" name = "spec" value="4.5 million">
+    {% if spec == "4.5 million"%}
+        <label for="spec1" style="color:red">4.5 million</label>
+    {% else %}
+        <label for="spec1">4.5 million</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "spec3" name = "spec" value="6.6 million">
+    {% if spec == "6.6 million"%}
+        <label for="spec1" style="color:red">6.6 million</label>
+    {% else %}
+        <label for="spec1">6.6 million</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "spec4" name = "spec" value="8.7 million">
+    <label for="spec4" style="color:green">8.7 million</label>
+    <br>
+    <br>
+    <h4> 6. How many animals are adopted each year?</h4>
+    <input type="radio" id = "adopt1" name = "adopt" value="3.2 million">
+    <label for="adopt1" style="color:green">3.2 million</label>
+    <br>
+    <input type="radio" id = "adopt2" name = "adopt" value="4.5 million">
+    {% if spec == "4.5 million"%}
+        <label for="adopt1" style="color:red">4.5 million</label>
+    {% else %}
+        <label for="adopt1">4.5 million</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "adopt3" name = "adopt" value="6.6 million">
+    {% if spec == "6.6 million"%}
+        <label for="adopt1" style="color:red">6.6 million</label>
+    {% else %}
+        <label for="adopt1">6.6 million</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "adopt4" name = "adopt" value="8.7 million">
+    {% if spec == "8.7 million"%}
+        <label for="adopt1" style="color:red">8.7 million</label>
+    {% else %}
+        <label for="adopt1">8.7 million</label>
+    {% endif %}
+    <br>
+    <br>
+    <h4> 7. How many animals die from abuse in the US each year?</h4>
+    <input type="radio" id = "abuse1" name = "abuse" value="31.2 million">
+    {% if abuse == "31.2 million"%}
+        <label for="abuse1" style="color:red">31.2 million</label>
+    {% else %}
+        <label for="abuse1">31.2 million</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "abuse2" name = "abuse" value="10 million">
+    <label for="abuse2" style="color:green">10 million</label>
+    <br>
+    <input type="radio" id = "abuse3" name = "abuse" value="16.6 million">
+    {% if abuse == "16.6 million"%}
+        <label for="abuse1" style="color:red">16.6 million</label>
+    {% else %}
+        <label for="abuse1">16.6 million</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "abuse4" name = "abuse" value="18.7 million">
+    {% if abuse == "18.7 million"%}
+        <label for="abuse1" style="color:red">18.7 million</label>
+    {% else %}
+        <label for="abuse1">18.7 million</label>
+    {% endif %}
+    <br>
+    <br>
+    <h4> 8. What percentage of circus animals live their whole life in the circus?</h4>
+    <input type="radio" id = "lab1" name = "lab" value="96%">
+    <label for="lab1" style="color:green">96%</label>
+    <br>
+    <input type="radio" id = "lab2" name = "lab" value="90%">
+    {% if lab == "90%"%}
+        <label for="lab1" style="color:red">90%</label>
+    {% else %}
+        <label for="lab1">90%</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "lab3" name = "lab" value="99%">
+    {% if lab == "99%"%}
+        <label for="lab1" style="color:red">99%</label>
+    {% else %}
+        <label for="lab1">99%</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "lab4" name = "lab" value="93%">
+    {% if lab == "93%"%}
+        <label for="lab1" style="color:red">93%</label>
+    {% else %}
+        <label for="lab1">93%</label>
+    {% endif %}
+    <br>
+    <br>
+    <h4> 9. What was the #1 dog breed in 2020?</h4>
+    <input type="radio" id = "dog1" name = "dog" value="Labrador">
+    <label for="dog1" style="color:green">Labrador</label>
+    <br>
+    <input type="radio" id = "dog2" name = "dog" value="French Bulldog">
+    {% if dog == "French Bulldog"%}
+        <label for="dog1" style="color:red">French Bulldog</label>
+    {% else %}
+        <label for="dog1">French Bulldog</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "dog3" name = "dog" value="German Shepherd">
+    {% if dog == "German Shepherd"%}
+        <label for="dog1" style="color:red">German Shepherd</label>
+    {% else %}
+        <label for="dog1">German Shepherd</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "dog4" name = "dog" value="Golden Retriever">
+    {% if dog == "Golden Retriever"%}
+        <label for="dog1" style="color:red">Golden Retriever</label>
+    {% else %}
+        <label for="dog1">Golden Retriever</label>
+    {% endif %}
+    <br>
+    <br>
+    <h4> 10. What was the #1 cat breed?</h4>
+    <input type="radio" id = "cat1" name = "cat" value="Persian">
+    {% if dog == "Persian"%}
+        <label for="cat1" style="color:red">Persian</label>
+    {% else %}
+        <label for="cat1">Persian</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "cat2" name = "cat" value="Siamese">
+    <label for="cat2" style="color:green">Siamese</label>
+    <br>
+    <input type="radio" id = "cat3" name = "cat" value="Maine Coon">
+    {% if dog == "Maine Coon"%}
+        <label for="cat1" style="color:red">Maine Coon</label>
+    {% else %}
+        <label for="cat1">Maine Coon</label>
+    {% endif %}
+    <br>
+    <input type="radio" id = "cat4" name = "cat" value="Ragdoll">
+    {% if dog == "Ragdoll"%}
+        <label for="cat1" style="color:red">Ragdoll</label>
+    {% else %}
+        <label for="cat1">Ragdoll</label>
+    {% endif %}
+    <br>
+    <br>
+    <h2>Score: {{ score }}</h2>
+    <br>
+    <br>
+    <input type="button" value="Return to Home">
+    </form>
+</div>
+{% endblock %}

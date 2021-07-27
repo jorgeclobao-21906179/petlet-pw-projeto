@@ -2,23 +2,25 @@
 <header>
   <nav class="nav-bar">
       <div class="nav-left-side">
-          <img src="resources/images/petlet-logo.png" alt="Logo">
+          <img src="{% static '/images/petlet-logo.png' %}" alt="Logo">
       </div>
+      {% with url_name=request.resolver_match.url_name %}
       <div class="nav-right-side">
           <ul class="nav-link-list">
               <li class="nav-link">
-                  <a class="is-active" href="#">home</a>
+                  <a class="{% if url_name == 'home' %} is-active {% endif %}" href="{% url 'home' %}">home</a>
               </li>
               <li class="nav-link">
-                  <a class="" href="#">animals</a>
+                  <a class="{% if url_name == 'about' %} is-active {% endif %}" href="{% url 'about' %}">about</a>
               </li>
               <li class="nav-link">
-                  <a class="" href="#">about</a>
+                  <a class="{% if url_name == 'contact' %} is-active {% endif %}" href="{% url 'contact' %}">contacts</a>
               </li>
               <li class="nav-link">
-                  <a class="" href="#">contacts</a>
+                  <a class="{% if url_name == 'quiz' %} is-active {% endif %}" href="{% url 'quiz' %}">quiz</a>
               </li>
           </ul>
       </div>
+      {% endwith %}
   </nav>
 </header>

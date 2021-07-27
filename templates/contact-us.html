@@ -1,5 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> Contact Us Template </h1>
+{% load static %}
+<main style = "overflow-y: hidden">
+            <section class="grid-container-contact">
+                <section class="m-contact-top">
+                    <img class="contact-dog" src="{% static 'images/french-bulldog.png'%}" alt="Happy French Bulldog">
+                    <div class="circle"></div>
+                </section>
+                <section class="m-contact-bottom-1">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3817.3453171806977!2d145.760440950996!3d-16.908250188310323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x69786680af2a47bf%3A0x27f7d96c3388c3fc!2sDigger%20St%2C%20Cairns%20North%20QLD%204870%2C%20Australia!5e0!3m2!1sen!2spt!4v1627423221511!5m2!1sen!2spt" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </section>
+                <section class="m-contact-bottom-2">
+                    <h1>Get in touch with us</h1>
+                    <form method = "post" action="{% url 'keep_contact' %}">
+                        {% csrf_token %}
+                        <input type = "text" name="first_name" placeholder="First Name">
+                        <input type = "text" name="last_name" placeholder="Last Name">
+                        <input type = "email" name="email" placeholder="Email">
+                        <input type = "text" name="message" placeholder="Write your message here">
+                        <input type = "submit" value="Send">
+                    </form>
+                </section>
+                <section class="m-contact-bottom-3">
+                    <h2>Meet Us</h2>
+                    <div class="text-meet-us">
+                        <p><i class="fas fa-phone" style="margin-right: 10px; color: #39250A"></i>+351 991 123 123</p>
+                        <p><i class="fas fa-at" style="margin-right: 10px; color: #39250A"></i>contact@petlet.com</p>
+                        <p><i class="fas fa-home" style="margin-right: 10px; color: #39250A"></i>Street Doggers n.7, CATastrophy</p>
+                    </div>
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook-f fa-2x" style="color: #3b5998"></i></a>
+                        <a href="#"><i class="fab fa-instagram fa-2x" style="color: #c13584"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p fa-2x" style="color: #c8232c"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-2x" style="color: #1DA1F2;"></i></a>
+                    </div>                  
+                </section>
+            </section>
+</main>
 {% endblock %}

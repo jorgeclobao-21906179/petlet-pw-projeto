@@ -2,7 +2,7 @@
 
 {% block content %}
 {% load static %}
-<main>
+<main class = "is-fullscreen">
     <section class="layout-hero">
         <div class="wrapper-hero">
             <article class="m-hero-left">
@@ -11,10 +11,10 @@
                     have been abandoned are no exception. As a person, how would you feel 
                     if you were abandoned? You'd be sad I bet! That's just how these animals feel. 
                     Now, look into your heart and...</h3>
-                <button type="button" class="m-cta-button" onclick="alert('Clicked')">Take them home!</button>
+                <button type="button" class="m-cta-button" onclick="window.location.href="{% url 'animals' %}"">Take them home!</a></button>
             </article>
             <figure class="m-image-right">
-                <img src="resources/images/pet-owner.jpg" alt="">
+                    <img src="{% static "images/adorable-dog.jpg" %}" alt="">
             </figure>
         </div>  
     </section>

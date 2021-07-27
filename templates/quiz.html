@@ -1,5 +1,152 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> Quiz Template </h1>
+<div class = "quiz-container">
+    <h1> Quiz </h1>
+    <br>
+    <form method="post" action="{% url 'quiz_results' %}">
+    {% csrf_token %}
+    <h4> 1. When is World Adoption Day? </h4>
+    <input type="radio" id="date1" name = "date" value="September 25">
+    <label for="date1">September 25</label>
+    <br>
+    <input type="radio" id = "date2" name = "date" value="November 9">
+    <label for="date2">November 9</label>
+    <br>
+    <input type="radio" id = "date3" name = "date" value="August 24">
+    <label for="date3">August 24</label>
+    <br>
+    <input type="radio" id = "date4" name = "date" value="March 15">
+    <label for="date4">March 15</label>
+    <br>
+    <br>
+    <h4> 2. How many stray animals exist in the world? </h4>
+    <input type="radio" id = "stray1" name = "stray" value="approx. 200 million">
+    <label for="stray1">approx. 200 million</label>
+    <br>
+    <input type="radio" id = "stray2" name = "stray" value="approx. 900 million">
+    <label for="stray2">approx. 900 million</label>
+    <br>
+    <input type="radio" id = "stray3" name = "stray" value="approx. 600 million">
+    <label for="stray3">approx. 600 million</label>
+    <br>
+    <input type="radio" id = "stray4" name = "stray" value="approx. 300 million">
+    <label for="stray4">approx. 300 million</label>
+    <br>
+    <br>
+    <h4> 3. Which animal can you adopt from this list? </h4>
+    <input type="radio" id = "animal1" name = "animal" value="Lion">
+    <label for="animal1">Lion</label>
+    <br>
+    <input type="radio" id = "animal2" name = "animal" value="Chinchilla">
+    <label for="animal2">Chinchilla</label>
+    <br>
+    <input type="radio" id = "animal3" name = "animal" value="Anaconda">
+    <label for="animal3">Anaconda</label>
+    <br>
+    <input type="radio" id = "animal4" name = "animal" value="Tasmanian Devil">
+    <label for="animal4">Tasmanian Devil</label>
+    <br>
+    <br>
+    <h4> 4. What can you not feed a dog? </h4>
+    <input type="radio" id = "feed1" name = "feed" value="Meat">
+    <label for="feed1">Meat</label>
+    <br>
+    <input type="radio" id = "feed2" name = "feed" value="Egg">
+    <label for="feed2">Egg</label>
+    <br>
+    <input type="radio" id = "feed3" name = "feed" value="Bones">
+    <label for="feed3">Bones</label>
+    <br>
+    <input type="radio" id = "feed4" name = "feed" value="Chocolate">
+    <label for="feed4">Chocolate</label>
+    <br>
+    <br>
+    <h4> 5. How many animal species exist in the world? </h4>
+    <input type="radio" id = "spec1" name = "spec" value="3.2 million">
+    <label for="spec1">3.2 million</label>
+    <br>
+    <input type="radio" id = "spec2" name = "spec" value="4.5 million">
+    <label for="spec2">4.5 million</label>
+    <br>
+    <input type="radio" id = "spec3" name = "spec" value="6.6 million">
+    <label for="spec3">6.6 million</label>
+    <br>
+    <input type="radio" id = "spec4" name = "spec" value="8.7 million">
+    <label for="spec4">8.7 million</label>
+    <br>
+    <br>
+    <h4> 6. How many animals are adopted each year?</h4>
+    <input type="radio" id = "adopt1" name = "adopt" value="3.2 million">
+    <label for="adopt1">3.2 million</label>
+    <br>
+    <input type="radio" id = "adopt2" name = "adopt" value="4.5 million">
+    <label for="adopt2">4.5 million</label>
+    <br>
+    <input type="radio" id = "adopt3" name = "adopt" value="6.6 million">
+    <label for="adopt3">6.6 million</label>
+    <br>
+    <input type="radio" id = "adopt4" name = "adopt" value="8.7 million">
+    <label for="adopt4">8.7 million</label>
+    <br>
+    <br>
+    <h4> 7. How many animals die from abuse in the US each year?</h4>
+    <input type="radio" id = "abuse1" name = "abuse" value="31.2 million">
+    <label for="abuse1">31.2 million</label>
+    <br>
+    <input type="radio" id = "abuse2" name = "abuse" value="10 million">
+    <label for="abuse2">10 million</label>
+    <br>
+    <input type="radio" id = "abuse3" name = "abuse" value="16.6 million">
+    <label for="abuse3">16.6 million</label>
+    <br>
+    <input type="radio" id = "abuse4" name = "abuse" value="18.7 million">
+    <label for="abuse4">18.7 million</label>
+    <br>
+    <br>
+    <h4> 8. What percentage of circus animals live their whole life in the circus?</h4>
+    <input type="radio" id = "lab1" name = "lab" value="96%">
+    <label for="lab1">96%</label>
+    <br>
+    <input type="radio" id = "lab2" name = "lab" value="90%">
+    <label for="lab2">90%</label>
+    <br>
+    <input type="radio" id = "lab3" name = "lab" value="99%">
+    <label for="lab3">99%</label>
+    <br>
+    <input type="radio" id = "lab4" name = "lab" value="93%">
+    <label for="lab4">93%</label>
+    <br>
+    <br>
+    <h4> 9. What was the #1 dog breed in 2020?</h4>
+    <input type="radio" id = "dog1" name = "dog" value="Labrador">
+    <label for="dog1">Labrador</label>
+    <br>
+    <input type="radio" id = "dog2" name = "dog" value="French Bulldog">
+    <label for="dog2">French Bulldog</label>
+    <br>
+    <input type="radio" id = "dog3" name = "dog" value="German Shepherd">
+    <label for="dog3">German Shepherd</label>
+    <br>
+    <input type="radio" id = "dog4" name = "dog" value="Golden Retriever">
+    <label for="dog4">Golden Retriever</label>
+    <br>
+    <br>
+    <h4> 10. What was the #1 cat breed?</h4>
+    <input type="radio" id = "cat1" name = "cat" value="Persian">
+    <label for="cat1">Persian</label>
+    <br>
+    <input type="radio" id = "cat2" name = "cat" value="Siamese">
+    <label for="cat2">Siamese</label>
+    <br>
+    <input type="radio" id = "cat3" name = "cat" value="Maine Coon">
+    <label for="cat3">Maine Coon</label>
+    <br>
+    <input type="radio" id = "cat4" name = "cat" value="Ragdoll">
+    <label for="cat4">Ragdoll</label>
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+    </form>
+</div>
 {% endblock %}
